@@ -1,0 +1,196 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a2e; /* Deep dark blue */
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.dashboard-container {
+    background-color: #16213e; /* Lighter dark blue */
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #0f3460;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: #e94560; /* Pink/Red accent */
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #888;
+}
+
+/* Main Display Area */
+.main-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.output-card, .battery-card {
+    background-color: #0f3460;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.power-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4cc9f0; /* Cyan */
+    margin: 10px 0;
+}
+
+.status-indicator {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #333;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Battery Styles */
+.battery-container {
+    width: 100%;
+    height: 40px;
+    background-color: #222;
+    border-radius: 10px;
+    border: 2px solid #555;
+    margin: 15px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.battery-level {
+    height: 100%;
+    background: linear-gradient(90deg, #e94560, #f0a500, #4cc9f0); /* Gradient */
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Controls Grid */
+.controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.control-card {
+    background-color: #1a1a2e;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #0f3460;
+}
+
+.control-card h3 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.solar h3 i { color: #f0a500; } /* Yellow Sun */
+.wind h3 i { color: #4cc9f0; } /* Blue Wind */
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Custom Slider Styling */
+input[type=range] {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #0f3460;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e94560;
+    cursor: pointer;
+}
+
+.local-output {
+    text-align: right;
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+.local-output span {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* AI Section */
+.ai-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #0f3460;
+    border-radius: 15px;
+}
+
+.btn-ai {
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-ai:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+}
+
+.ai-msg {
+    margin-top: 15px;
+    font-style: italic;
+    color: #4cc9f0;
+    height: 20px; /* Prevent jump */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .main-display, .controls-grid {
+        grid-template-columns: 1fr;
+    }
+}

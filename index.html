@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPower AI Dashboard</title>
+    
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Bootstrap Icons (Optional, for cool icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <header>
+            <h1><i class="bi bi-lightning-charge-fill"></i> EcoPower AI Dashboard</h1>
+            <p>Smart Renewable Energy Management System</p>
+        </header>
+
+        <!-- Main Display: Total Output -->
+        <section class="main-display">
+            <div class="output-card">
+                <h2>Total Output</h2>
+                <div class="power-value"><span id="total-power">0</span> kW</div>
+                <div class="status-indicator" id="system-status">System Standby</div>
+            </div>
+            
+            <div class="battery-card">
+                <h2>Battery Storage</h2>
+                <div class="battery-container">
+                    <div class="battery-level" id="battery-level" style="width: 0%;"></div>
+                </div>
+                <p><span id="battery-percent">0</span>% Charged</p>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section class="controls-grid">
+            
+            <!-- Solar Panel Control -->
+            <div class="control-card solar">
+                <h3><i class="bi bi-sun-fill"></i> Solar Array</h3>
+                <div class="input-group">
+                    <label>Sun Intensity: <span id="sun-val">0</span>%</label>
+                    <input type="range" id="sun-slider" min="0" max="100" value="0">
+                </div>
+                <div class="local-output">Generating: <span id="solar-output">0</span> kW</div>
+            </div>
+
+            <!-- Wind Turbine Control -->
+            <div class="control-card wind">
+                <h3><i class="bi bi-wind"></i> Wind Farm</h3>
+                <div class="input-group">
+                    <label>Wind Speed: <span id="wind-val">0</span> m/s</label>
+                    <input type="range" id="wind-slider" min="0" max="30" value="0">
+                </div>
+                <div class="local-output">Generating: <span id="wind-output">0</span> kW</div>
+            </div>
+
+        </section>
+
+        <!-- AI Control Section -->
+        <section class="ai-section">
+            <h3>AI Optimization</h3>
+            <p>Use AI to balance load and maximize efficiency based on current conditions.</p>
+            <button id="optimize-btn" class="btn-ai">Activate AI Optimization</button>
+            <p id="ai-message" class="ai-msg"></p>
+        </section>
+
+    </div>
+
+    <!-- Link to JS -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
