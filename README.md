@@ -16,6 +16,7 @@ The app models a small energy management system with:
 - Status indicators for production levels
 
 The dashboard is visually styled as a modern control center, using dark colors, cards, and gradient accents to represent energy production and system health.
+<img width="942" height="883" alt="image" src="https://github.com/user-attachments/assets/78a16889-47a3-477a-badf-43dd3e571b6c" />
 
 ## Features
 
